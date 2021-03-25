@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace LinkedList
+namespace LinkedListDemo
 {
-    class LinkedList
+    public class LinkedList
     {
 
 
@@ -77,7 +77,7 @@ namespace LinkedList
             Node temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine("Linked list is empty");
+              //  Console.WriteLine("Linked list is empty");
                 return;
             }
             while (temp != null)
@@ -109,6 +109,22 @@ namespace LinkedList
             return head;
         }
 
+        public int Search(int value)
+        {
+            Node temp = head;
+            int count = 0;
+            while (temp != null)
+            {
+                count++;
+                if (temp.data == value)
+                {
+                    Console.Write("Value found at index:  "+count);
+                    return value;
+                }
+                temp = temp.next;
+            }
+            return 0;
+        }
 
 
 
@@ -130,6 +146,9 @@ namespace LinkedList
             list.RemoveLastNode();
             Console.WriteLine();
             list.Display();
+            Console.WriteLine();
+            int  value = list.Search(30);
+            Console.WriteLine(" value =  "+value);
 
 
 
