@@ -94,6 +94,22 @@ namespace LinkedList
             this.head = this.head.next;
             return this.head;
         }
+        internal Node RemoveLastNode()
+        {
+            if (head == null)
+                return null;
+            if (head.next == null)
+                return null;
+            Node newNode = head;
+            while (newNode.next.next != null)
+            {
+                newNode = newNode.next;
+            }
+            newNode.next = null;
+            return head;
+        }
+
+
 
 
         static void Main(string[] args)
@@ -111,6 +127,10 @@ namespace LinkedList
             list.RemoveFirstNode();
             Console.WriteLine();
             list.Display();
+            list.RemoveLastNode();
+            Console.WriteLine();
+            list.Display();
+
 
 
         }
